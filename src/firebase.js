@@ -3,16 +3,16 @@ import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 
 // Your Firebase configuration
-// Replace these values with your actual Firebase project configuration
+// Using environment variables for security
 const firebaseConfig = {
-    apiKey: "AIzaSyDS5ZUWogRUYBQgMkRsKwDPvuVMTvKex8o",
-    authDomain: "fir-chat-app-397da.firebaseapp.com",
-    databaseURL: "https://fir-chat-app-397da-default-rtdb.firebaseio.com",
-    projectId: "fir-chat-app-397da",
-    storageBucket: "fir-chat-app-397da.firebasestorage.app",
-    messagingSenderId: "479325246054",
-    appId: "1:479325246054:web:c69cc883acfb5a5bd813a7",
-    measurementId: "G-28WQKCJTG1"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
   };
 
 // Initialize Firebase
