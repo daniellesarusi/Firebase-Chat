@@ -31,21 +31,43 @@ A real-time chat application built with React and Firebase Realtime Database + F
 5. Register your app with a nickname
 6. Copy the firebaseConfig object
 
-### 3. Update Firebase Configuration
+### 3. Environment Variables Setup
 
-Replace the placeholder values in `src/firebase.js` with your actual Firebase configuration:
+1. Create a `.env` file in the root directory of your project
+2. Add your Firebase configuration as environment variables:
 
-```javascript
-const firebaseConfig = {
-  apiKey: "your-actual-api-key",
-  authDomain: "your-project-id.firebaseapp.com",
-  databaseURL: "https://your-project-id-default-rtdb.firebaseio.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
-};
+```env
+REACT_APP_FIREBASE_API_KEY=your-actual-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+REACT_APP_FIREBASE_DATABASE_URL=https://your-project-id-default-rtdb.firebaseio.com
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=your-app-id
+REACT_APP_FIREBASE_MEASUREMENT_ID=your-measurement-id
 ```
+
+**Important:** 
+- The `.env` file is already included in `.gitignore` to keep your API keys secure
+- Never commit your `.env` file to version control
+- Each developer needs to create their own `.env` file with their Firebase credentials
+
+### 3.1 Using the Demo Firebase Project (Optional)
+
+If you want to use the existing Firebase project for testing, you can use these credentials:
+
+```env
+REACT_APP_FIREBASE_API_KEY=AIzaSyDS5ZUWogRUYBQgMkRsKwDPvuVMTvKex8o
+REACT_APP_FIREBASE_AUTH_DOMAIN=fir-chat-app-397da.firebaseapp.com
+REACT_APP_FIREBASE_DATABASE_URL=https://fir-chat-app-397da-default-rtdb.firebaseio.com
+REACT_APP_FIREBASE_PROJECT_ID=fir-chat-app-397da
+REACT_APP_FIREBASE_STORAGE_BUCKET=fir-chat-app-397da.firebasestorage.app
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=479325246054
+REACT_APP_FIREBASE_APP_ID=1:479325246054:web:c69cc883acfb5a5bd813a7
+REACT_APP_FIREBASE_MEASUREMENT_ID=G-28WQKCJTG1
+```
+
+**Note:** This is a shared demo project. For production use, create your own Firebase project.
 
 ### 4. Enable Firebase Storage (for profile pictures)
 
